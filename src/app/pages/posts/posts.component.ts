@@ -20,4 +20,8 @@ export class PostsComponent implements OnInit {
     this.posts = this.dataService.getPosts();
   }
 
+  clickPost(id: number): void {
+    console.log(id);
+  }
+
 }
