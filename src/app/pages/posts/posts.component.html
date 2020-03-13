@@ -4,19 +4,10 @@
 
 <ul class="list-group">
 
-  <li
+  <app-post
     *ngFor="let post of posts | async"
-    class="list-group-item"
+    [post]="post"
   >
-
-    <h2>
-      {{ post.title }}
-    </h2>
-
-    <p>
-      {{ post.body }}
-    </p>
-
-  </li>
+  </app-post>
 
 </ul>
