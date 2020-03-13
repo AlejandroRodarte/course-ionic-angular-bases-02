@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../../services/data.service';
+import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-posts',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostsComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private dataService: DataService
+  ) { }
 
   ngOnInit(): void {
+    this
+      .dataService
+      .getPosts()
+      .pipe(
+        tap(console.log)
+      )
+      .subscribe();
   }
 
 }
